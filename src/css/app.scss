@@ -1,0 +1,85 @@
+@keyframes rainbow-hue {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.color-preview {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &.rainbow-active {
+    background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red) !important;
+    animation: rainbow-hue 3s linear infinite;
+  }
+}
+
+.theme-color-label {
+  min-width: 80px;
+  font-size: 13px;
+}
+
+.nav-item.q-router-link--active,
+.nav-item.q-router-link--exact-active {
+  border: 1px solid currentColor;
+  color: inherit !important;
+}
+
+.status-chip {
+  text-transform: capitalize;
+}
+
+.farm-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
+.companion-good {
+  border-left: 4px solid var(--q-positive);
+}
+
+.companion-bad {
+  border-left: 4px solid var(--q-negative);
+}
+
+// --- Responsive dialog cards ---
+.dialog-card {
+  width: 500px;
+  max-width: 95vw;
+}
+
+.dialog-card-lg {
+  width: 700px;
+  max-width: 95vw;
+}
+
+.dialog-card-sm {
+  width: 360px;
+  max-width: 95vw;
+}
+
+// --- Mobile improvements ---
+@media (max-width: 599px) {
+  .q-page.q-pa-md {
+    padding: 8px;
+  }
+
+  .q-table__container {
+    overflow-x: auto;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  .q-toolbar > span.text-body2 {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "herdit": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
