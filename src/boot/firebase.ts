@@ -9,13 +9,13 @@ import {
 import { ref } from 'vue';
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
+  apiKey: 'AIzaSyAlD-fU44NoRvfAwOousGlIK2GzoV9nhDs',
   authDomain: 'herdit-livestock-app.firebaseapp.com',
   databaseURL: 'https://herdit-livestock-app-default-rtdb.firebaseio.com',
   projectId: 'herdit-livestock-app',
   storageBucket: 'herdit-livestock-app.firebasestorage.app',
-  messagingSenderId: '000000000000',
-  appId: '1:000000000000:web:0000000000000000',
+  messagingSenderId: '601926883797',
+  appId: '1:601926883797:web:ca42239fc274159e83c55c',
 };
 
 const app = initializeApp(firebaseConfig);
