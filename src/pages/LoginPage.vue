@@ -38,8 +38,8 @@
           </q-card-section>
 
           <q-card-actions vertical class="q-px-md q-pb-md">
-            <q-btn color="primary" label="Sign In" :loading="loading" @click="signIn" class="q-mb-sm" />
-            <q-btn flat label="Create Account" :loading="loading" @click="register" />
+            <q-btn color="primary" label="Sign In" :loading="loading" :disable="formIncomplete" @click="signIn" class="q-mb-sm" />
+            <q-btn flat label="Create Account" :loading="loading" :disable="formIncomplete" @click="register" />
             <q-separator class="q-my-sm" />
             <q-btn
               color="red"
@@ -56,7 +56,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import {
   signInWithEmailAndPassword,
@@ -77,6 +77,7 @@ export default defineComponent({
     const showPassword = ref(false);
     const error = ref('');
     const loading = ref(false);
+    const formIncomplete = computed(() => !email.value || !password.value);
 
     async function signIn() {
       if (!email.value || !password.value) return;
@@ -125,7 +126,7 @@ export default defineComponent({
       }
     }
 
-    return { email, password, showPassword, error, loading, signIn, register, signInWithGoogle };
+    return { email, password, showPassword, error, loading, formIncomplete, signIn, register, signInWithGoogle };
   },
 });
 </script>
